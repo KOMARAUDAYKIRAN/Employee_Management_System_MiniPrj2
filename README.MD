@@ -111,7 +111,7 @@ EMS-MiniProject2/
 
 ---
 
-### 🔧 Backend Setup
+### Backend Setup
 
 ```bash
 Navigate to API folder:
@@ -129,49 +129,51 @@ http://localhost:5000/swagger
 
 ```
 ---
-### Frontend Setup
-Open frontend/index.html using Live Server
-OR
-Open directly in browser
----
-### Default Credentials
-Role	Username	Password
-Admin	admin	admin123
-Viewer	viewer	viewer123
----
-## API Endpoints
-### Authentication
-POST /api/auth/register
-POST /api/auth/login
-### Employees
-GET /api/employees
-GET /api/employees/{id}
-POST /api/employees (Admin)
-PUT /api/employees/{id} (Admin)
-DELETE /api/employees/{id} (Admin)
+## 🌐 Frontend Setup
+
+- Open `frontend/index.html` using **Live Server**  
+  **OR**  
+- Open the file directly in your browser  
 
 ---
-### Security Features
-JWT Authentication
-Role-based Authorization
-BCrypt password hashing
+
+## Default Credentials
+
+| Role   | Username | Password   |
+|--------|----------|------------|
+| Admin  | admin    | admin123   |
+| Viewer | viewer   | viewer123  |
+
 ---
-### Testing
+
+## API Endpoints
+
+### Authentication
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+
+### Employees
+- `GET /api/employees`
+- `GET /api/employees/{id}`
+- `POST /api/employees` *(Admin only)*
+- `PUT /api/employees/{id}` *(Admin only)*
+- `DELETE /api/employees/{id}` *(Admin only)*
+
+---
+
+## Security Features
+- JWT-based Authentication
+- Role-based Authorization (Admin / Viewer)
+- BCrypt password hashing
+
+---
+
+## Testing
 
 Run backend tests:
 
+```bash
 dotnet test
-Includes:
-
-Unit Tests (Moq)
-Integration Tests (EF In-Memory)
----
-### Key Highlights
-Clean architecture with service layer
-Repository pattern implementation
-Separation of concerns (frontend vs backend)
-Server-side data processing (performance optimized
----
 ### Author
 
 Name: Uday Kiran Komara
