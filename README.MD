@@ -61,7 +61,7 @@ This application allows organizations to manage employee records with secure aut
 ---
 
 ## Project Structure
-
+```bash
 
 EMS-MiniProject2/ 
 │ 
@@ -99,7 +99,7 @@ EMS-MiniProject2/
         ├── dashboardService.js     ← UPDATED: single API call 
         ├── uiService.js            ← UPDATED: pagination + role UI 
         └── app.js                  ← UPDATED: async/await + pagination state
-
+```
 ---
 
 ## Setup Instructions
@@ -114,60 +114,75 @@ EMS-MiniProject2/
 ### 🔧 Backend Setup
 
 ```bash
+Navigate to API folder:
 cd EMS.API
+Install dependencies:
 dotnet restore
-
-Update connection string in appsettings.json:
-
+Configure database in appsettings.json:
 "DefaultConnection": "Server=localhost;Database=EMSDashboard;Trusted_Connection=True;TrustServerCertificate=True;"
-
 Run migrations:
-
 dotnet ef database update
-
 Run API:
-
 dotnet run
-
 Open Swagger:
-
 http://localhost:5000/swagger
-Frontend Setup
+
+```
+---
+### Frontend Setup
 Open frontend/index.html using Live Server
 OR
 Open directly in browser
-Default Credentials
+---
+### Default Credentials
 Role	Username	Password
 Admin	admin	admin123
 Viewer	viewer	viewer123
-API Endpoints
-Authentication
+---
+## API Endpoints
+### Authentication
 POST /api/auth/register
 POST /api/auth/login
-Employees
+### Employees
 GET /api/employees
 GET /api/employees/{id}
 POST /api/employees (Admin)
 PUT /api/employees/{id} (Admin)
 DELETE /api/employees/{id} (Admin)
+
+---
 ### Security Features
 JWT Authentication
 Role-based Authorization
 BCrypt password hashing
-Testing
+---
+### Testing
 
-Run tests:
+Run backend tests:
 
 dotnet test
-Author
+Includes:
+
+Unit Tests (Moq)
+Integration Tests (EF In-Memory)
+---
+### Key Highlights
+Clean architecture with service layer
+Repository pattern implementation
+Separation of concerns (frontend vs backend)
+Server-side data processing (performance optimized
+---
+### Author
 
 Name: Uday Kiran Komara
 Batch: Batch 7
+---
 
-Notes
+### Notes
 Run dotnet ef database update before starting API
 JWT is stored in memory (not localStorage)
 Ensure SQL Server is running
-✅ Conclusion
+---
+### Conclusion
 
 This project demonstrates a full-stack Employee Management System with modern architecture, secure authentication, and scalable backend design.
